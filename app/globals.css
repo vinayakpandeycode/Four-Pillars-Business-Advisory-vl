@@ -1,4 +1,6 @@
-/* Four Pillars Typography */
+/* =========================================================
+   FOUR PILLARS — GLOBAL TYPOGRAPHY
+   ========================================================= */
 
 :root {
   --font-display: var(--font-cormorant);
@@ -15,10 +17,22 @@
   --warm-ivory: #f3ebdd;
 }
 
-html,
-body {
-  font-family: var(--font-body), sans-serif;
+/* Base */
+
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
 h1,
 h2,
@@ -26,6 +40,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-family: var(--font-display), serif;
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -35,15 +50,39 @@ p {
   font-family: var(--font-body), sans-serif;
 }
 
-button,
 a,
+button,
 input,
 textarea,
 select {
   font-family: var(--font-body), sans-serif;
 }
 
-/* Luxury editorial headings */
+/* =========================================================
+   HERO TYPOGRAPHY
+   ========================================================= */
+
+.hero h1 {
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+.hero h1 em {
+  color: var(--champagne-gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero h1 strong {
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+}
+
+/* =========================================================
+   EDITORIAL HEADINGS
+   ========================================================= */
 
 .hero-title,
 .display-title {
@@ -53,14 +92,83 @@ select {
   line-height: 0.95;
 }
 
-.gold-text {
+h2 em,
+h3 em {
   color: var(--champagne-gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* =========================================================
+   GOLD TEXT
+   ========================================================= */
+
+.gold-text,
+.gold-copy {
+  color: var(--champagne-gold);
+}
+
+.gold-text {
   font-style: italic;
 }
 
-/* Better text rendering */
+/* =========================================================
+   BODY TEXT
+   ========================================================= */
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.lead {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.eyebrow,
+.section-label,
+.footer-title {
+  font-family: var(--font-body), sans-serif;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  font-family: var(--font-body), sans-serif;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+.button {
+  font-family: var(--font-body), sans-serif;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   RESPONSIVE HERO TYPE
+   ========================================================= */
+
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: clamp(4rem, 5.8vw, 6.8rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero h1 {
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: clamp(3rem, 13vw, 4.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.03em;
+  }
 }
